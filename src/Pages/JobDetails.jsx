@@ -1,7 +1,26 @@
 import Header from "./../Components/Header.jsx";
 import Footer from "./../Components/Footer.jsx";
+import { useParams } from "react-router-dom";
+import { config, Jobdata } from "../Components/GeneralFunction.jsx";
+import axios from "axios";
+import { useState,useEffect } from "react";
 
-function JobDetails() {
+
+const JobDetails=()=> {
+  let param = useParams();
+
+  console.log(param.id)
+
+  const [content, setContent] = useState(Jobdata)
+  const fetchData=()=>{
+    let url =' http://get_data_url';
+    axios.get(url, config)
+    .then(response=>{
+      setContent(response.data.data)
+    })
+
+}
+
   return (
     <div>
       <Header page="Details" />
@@ -88,10 +107,10 @@ function JobDetails() {
                   <span>
                     <span>
                       <a href="#" className="title">
-                        Human Resource Manager
+                        {content.title}
                       </a>
                     </span>{" "}
-                    @ <a href="#"> Dropbox Inc</a>
+                    @ <a href="#"> {content.company}</a>
                   </span>
                   <div className="ad-meta">
                     <ul>
@@ -101,7 +120,7 @@ function JobDetails() {
                             className="fa fa-map-marker"
                             aria-hidden="true"
                           ></i>
-                          San Francisco, CA, US
+                          {content.address}
                         </a>
                       </li>
                       <li>
@@ -112,12 +131,12 @@ function JobDetails() {
                       </li>
                       <li>
                         <i className="fa fa-money" aria-hidden="true"></i>
-                        $25,000 - $35,000
+                        {content.min_salary} - ${content.max_salary}
                       </li>
                       <li>
                         <a href="#">
                           <i className="fa fa-tags" aria-hidden="true"></i>
-                          HR/Org. Development
+                          {content.location}
                         </a>
                       </li>
                       <li>

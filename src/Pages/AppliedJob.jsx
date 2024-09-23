@@ -1,12 +1,14 @@
 import Header from "../Components/Header";
 import React from "react";
 import Footer from "../Components/Footer";
+import Template from "../Components/Template"
 import UserInfoCard from "../Components/UserInfoCard";
 
 function AppliedJob() {
   return (
+   
     <div>
-      <Header page={"appliedJob"} />
+       <Template>
       <section className="job-bg page ad-profile-page">
         <div className="container">
           <div className="breadcrumb-section">
@@ -84,8 +86,11 @@ function AppliedJob() {
           </div>
         </div>
       </section>
-      <Footer />
+      </Template>
     </div>
+   
+
+    
   );
 }
 
