@@ -2,10 +2,10 @@ import React from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
-function Signin() {
+function SignIn() {
   return (
     <div>
-      <Header page={"signin"} />
+      <Header page={"SignIn"} />
       <section className="clearfix job-bg user-page">
         <div className="container text-center">
           <div className="user-account-content">
@@ -55,4 +55,4 @@ function Signin() {
   );
 }
 
-export default Signin;
+export default SignIn;

@@ -7,7 +7,6 @@ import {
   Navigate,
 } from "react-router-dom";
 import Index from "./Pages/Index.jsx";
-import Signin from "./Pages/Signin";
 import Signup from "./Pages/Signup";
 import JobList from "./Pages/JobList.jsx";
 import JobDetails from "./Pages/JobDetails.jsx";
@@ -20,10 +19,14 @@ import ProfileDetails from "./Pages/ProfileDetails";
 import AppliedJob from "./Pages/AppliedJob";
 import BookMark from "./Pages/BookMark";
 import DeleteAccount from "./Pages/DeleteAccount";
+import SignIn from "./Pages/Signin.jsx";
+import { ReactNotifications } from "react-notifications-component";
+import 'react-notifications-component/dist/theme.css'
 
 function App() {
   return (
     <div>
+      <ReactNotifications/>
       <Router>
         <Routes>
           <Route path="/" element={<Index />} />
@@ -39,7 +42,7 @@ function App() {
           <Route path="/applied-job" element={<AppliedJob />} />
           <Route path="/delete-account" element={<DeleteAccount />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/signin" element={<Signin />} />
+          <Route path="/SignIn" element={<SignIn />} />
         </Routes>
       </Router>
     </div>

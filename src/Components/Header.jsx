@@ -101,7 +101,7 @@ function Header({ page }) {
                   <i className="fa fa-user"></i>
                 </li>
                 <li>
-                  <a href="/signin">Sign In</a>
+                  <a href="/SignIn">Sign In</a>
                 </li>
                 <li>
                   <a href="/signup">Register</a>
