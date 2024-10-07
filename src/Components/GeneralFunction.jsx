@@ -1,8 +1,10 @@
 import axios from "axios"
+import cookies from 'js-cookies'
 
+const Token = cookies.getItem('token')
 export const config ={
     headers: {'content-type':'multipart/form-data',
-      'Authorization':'Bearer'}
+      'Authorization':`Bearer ${Token}`}
   }
   export const Jobdata =[
     {

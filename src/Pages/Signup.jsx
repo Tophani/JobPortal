@@ -4,8 +4,8 @@ import Footer from "../Components/Footer";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { Notify } from "../Components/Notify";
-// import React from 'react';
 import Select from 'react-select';
+import cookies from 'js-cookies';
 
 const Signup = () => {
   const [selectedOption, setSelectedOption]=useState
@@ -22,6 +22,7 @@ const Signup = () => {
 
   const Alert = ()=>{
 
+cookies.setItem ('username' ,'johndoe')
     Notify({
       title:"Successful",
       message: 'Good Job',
@@ -33,8 +34,8 @@ const Signup = () => {
     //   text:'That thing is still around?',
     //   icon:'question'
     // })
-
   }
+
    
   const options = [
     { value: 'chocolate', label: 'Chocolate' },
